@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  /* background-color: #282c34; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 0.5vmin);
+  color: black;
+  border-bottom: 2px solid black;
+}
+.App-logo{
+  background-image: url(./assets/logo.svg);
+  color: black;
+}
+
+button {
+  font-size: calc(10px + 1vmin);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tbody td {
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+
+}
+
+tbody tr:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+thead th {
+  padding: 0.5em;
+  text-align: left;
+  border-bottom: 2px solid black;
+}
