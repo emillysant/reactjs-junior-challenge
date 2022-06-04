@@ -1,20 +1,8 @@
 .App {
   text-align: center;
-}
-
-.App-header {
-  /* background-color: #282c34; */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 0.5vmin);
-  color: black;
-  border-bottom: 2px solid black;
-}
-.App-logo{
-  background-image: url(./assets/logo.svg);
-  color: black;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 button {
@@ -42,4 +30,36 @@ thead th {
   padding: 0.5em;
   text-align: left;
   border-bottom: 2px solid black;
+}
+.inputsContainers{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.inputsContent{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.inputAdress{
+  width: 100%;
+  margin-bottom: 10px;
+
+}
+.inputNotes{
+  width: 100%;
+  height: 300px;
+  margin-bottom: 10px;
+
+}
+
+.buttonGroup{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
