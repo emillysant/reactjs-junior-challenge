@@ -4,31 +4,10 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Pagination from "./components/pagination/Pagination";
 import Clients from "./components/Clients/Clients";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { generateId } from "./services/IdGenerator";
-import axios from "axios";
 import { useGetClients } from "./hooks/getClients";
-import { UpdateClient } from "./endpoints/Update";
-import { CreateClient } from './endpoints/Create';
-import { DeleteClient } from "./endpoints/Delete";
-
-const baseUrl = "http://localhost:8000";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
-
+import ModalClient from "./components/ModalClient/ModalClient";
+import Footer from "./components/Footer/Footer";
 interface IClient {
   id?: number;
   guid: string;
@@ -52,7 +31,7 @@ function App() {
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
-  console.log("hook client", clients)
+  console.log("hook client", clients);
 
   let filteredItems = clients?.filter((client: any) => {
     return client.name.toLowerCase().includes(search.toLowerCase());
@@ -102,20 +81,6 @@ function App() {
     formState: { errors },
   } = useForm<IClient>();
 
-  const deleteClient = async (id: any) => {
-    DeleteClient(id)
-    handleClose();
-  };
-
-  const onSubmit: SubmitHandler<IClient> = async (data) => {
-    if (selectedClient?.guid !== undefined) {
-      UpdateClient(data, selectedClient);
-    } else {
-      CreateClient(data);
-    }
-    handleClose();
-  };
-
   return (
     <div className="App">
       <Header
@@ -125,98 +90,16 @@ function App() {
       />
       <Clients currentItems={currentItems} SelectClient={SelectClient} />
       <Pagination pages={pages} setCurrentPage={setCurrentPage} />
-      <div>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <Typography id="modal-modal-title" component={"div"}>
-              Dados do Cliente
-            </Typography>
-            <Typography id="modal-modal-description" component={"div"}>
-              <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="inputsContainers">
-                  <div className="inputsContent">
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="Nome"
-                        defaultValue={selectedClient?.name}
-                        {...register("name", {
-                          required: "requerido",
-                          pattern: {
-                            value: /[A-Z][a-z]* [A-Z][a-z]*/,
-                            message: "Nome inválido",
-                          },
-                        })}
-                      />
-                      <input
-                        type="text"
-                        placeholder="Telefone"
-                        {...register("phone", {
-                          required: false,
-                        })}
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="Empresa"
-                        {...register("company", {
-                          required: false,
-                        })}
-                      />
-                      <input
-                        type="email"
-                        placeholder="Email"
-                        {...register("email", {
-                          required: "requerido",
-                          pattern: {
-                            value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
-                            message: "Email inválido",
-                          },
-                        })}
-                      />
-                    </div>
-                  </div>
-                  <input
-                    className="inputAdress"
-                    type="text"
-                    placeholder="Endereço"
-                    {...register("address", {
-                      required: false,
-                    })}
-                  />
-                  <input
-                    className="inputNotes"
-                    type="text"
-                    placeholder="Notas"
-                    {...register("note", {
-                      required: false,
-                    })}
-                  />
-                </div>
-                <div className="buttonGroup">
-                  <button type="submit">Salvar</button>
-                  <button onClick={handleClose}>Cancelar</button>
-                </div>
-              </form>
-            </Typography>
-            {selectedClient ? (
-              <button onClick={(e) => deleteClient(selectedClient?.id)}>
-                Deletar
-              </button>
-            ) : null}
-          </Box>
-        </Modal>
-      </div>
+      <ModalClient
+        selectedClient={selectedClient}
+        open={open}
+        handleClose={handleClose}
+        handleSubmit={handleSubmit}
+        register={register}
+      />
+      <Footer />
     </div>
   );
 }
 
 export default App;
-
-

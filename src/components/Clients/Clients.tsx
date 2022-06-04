@@ -1,9 +1,9 @@
 import React, { MouseEventHandler } from "react";
+import { Container } from "./Clients.styles";
 
 function Clients(_props: any) {
-
   return (
-    <div>
+    <Container>
       <table className="table">
         <thead>
           <tr>
@@ -19,7 +19,7 @@ function Clients(_props: any) {
             _props.currentItems.map((item: any) => {
               return (
                 <tr
-                  className="item"
+                  
                   key={item.guid}
                   onClick={(e) =>
                     _props.SelectClient(item) as
@@ -42,7 +42,7 @@ function Clients(_props: any) {
           )}
         </tbody>
       </table>
-    </div>
+    </Container>
   );
 }
 

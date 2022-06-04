@@ -1,21 +1,27 @@
+import { Button } from "@mui/material";
 import React from "react";
+import { Container } from "./Pagination.styles";
 
 function Pagination(_props: any) {
-  return <div>
-         {Array.from(Array(_props.pages), (item, index) => {
+  return (
+    <Container>
+      {Array.from(Array(_props.pages), (item, index) => {
         return (
-          <button
+          <Button
             key={index}
             value={index}
             onClick={(e) =>
-                _props.setCurrentPage(Number((e.target as HTMLButtonElement).value))
+              _props.setCurrentPage(
+                Number((e.target as HTMLButtonElement).value)
+              )
             }
           >
             {index + 1}
-          </button>
+          </Button>
         );
       })}
-  </div>;
+    </Container>
+  );
 }
 
 export default Pagination;
