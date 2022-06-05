@@ -110,7 +110,11 @@ Deve haver um botão na tabela para excluir o cliente
     <li>Custom Hook para renderizar os Clientes</li>
 </ul>
 
-    
+### Rodar o Servidor: 
+json-server --watch ./src/database/fakeData.json --port 8000 --delay 300
+
+### Rodar a aplicação:
+npm start
 
 
 
