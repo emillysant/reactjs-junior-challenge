@@ -98,8 +98,8 @@ Deve haver um botão na tabela para excluir o cliente
 
 ## Solução
 ### Imagens
-![image](https://user-images.githubusercontent.com/70452464/172052353-5e949063-908a-4527-8713-a29d88a16453.png)
-![image](https://user-images.githubusercontent.com/70452464/172052385-8694feb1-64ef-471a-ba42-365372632aa7.png)
+![image](https://user-images.githubusercontent.com/70452464/172053185-731b977e-bc06-48cc-9d51-cdd35192e5f0.png)
+![image](https://user-images.githubusercontent.com/70452464/172053210-1ccb31bd-267a-4a3a-a697-41bd1a296f1b.png)
 
 ### Features
 Gerador de dados mocados: https://www.mockaroo.com/
