@@ -106,6 +106,7 @@ Deve haver um botão na tabela para excluir o cliente
     <li>Gerador de dados mocados: https://www.mockaroo.com/</li>
     <li>Requisição com Axios: https://www.npmjs.com/package/axios</li>
     <li>Estilização com Material UI: https://mui.com/pt/material-ui/react-button/</li>
+    <li>Estilização com styled-components: https://www.npmjs.com/package/styled-components</li>
     <li>Geração de ids com uuid: https://www.npmjs.com/package/uuid</li>
     <li>Custom Hook para renderizar os Clientes</li>
 </ul>
