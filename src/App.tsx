@@ -1,46 +1,35 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import "./App.css";
+import { useState, useEffect } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useGetClients } from "./hooks/getClients";
 import Header from "./components/Header/Header";
 import Pagination from "./components/pagination/Pagination";
 import Clients from "./components/Clients/Clients";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { useGetClients } from "./hooks/getClients";
 import ModalClient from "./components/ModalClient/ModalClient";
 import Footer from "./components/Footer/Footer";
-interface IClient {
-  id?: number;
-  guid: string;
-  name: string;
-  company?: string;
-  email: string;
-  phone?: string;
-  address?: string;
-  note?: string;
-  isActive: boolean;
-}
+import { IClient } from "./database/ClientInterface";
+
 function App() {
   const [itemsPerPage, setItemsPerPage] = useState(8);
   const [currentPage, setCurrentPage] = useState(0);
   const [search, setSearch] = useState("");
   const [selectedClient, SetSelectedCliendt] = useState<IClient | null>(null);
-  const [clients, isLoading, error] = useGetClients();
-  // problemas na tipagem durante a desestruturação do array
+  const [open, setOpen] = React.useState(false);
+  const [clients, isLoading, error] = useGetClients(open);
 
   const pages = Math.ceil(clients.length / itemsPerPage);
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
-  console.log("hook client", clients);
-
   let filteredItems = clients?.filter((client: any) => {
     return (
       client.name.toLowerCase().includes(search.toLowerCase()) +
-      client.company.toLowerCase().includes(search.toLowerCase()) +
-      client.phone.toLowerCase().includes(search.toLowerCase()) +
+      client.company?.toLowerCase().includes(search.toLowerCase()) +
+      client.phone?.toLowerCase().includes(search.toLowerCase()) +
       client.email.toLowerCase().includes(search.toLowerCase()) +
       client.isActive
-        .toString()
+        ?.toString()
         .includes(search.toLowerCase() === "ativo" ? "true" : "false")
     );
   });
@@ -72,7 +61,6 @@ function App() {
     handleOpen();
   };
 
-  const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
