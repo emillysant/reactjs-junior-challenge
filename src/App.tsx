@@ -34,7 +34,15 @@ function App() {
   console.log("hook client", clients);
 
   let filteredItems = clients?.filter((client: any) => {
-    return client.name.toLowerCase().includes(search.toLowerCase());
+    return (
+      client.name.toLowerCase().includes(search.toLowerCase()) +
+      client.company.toLowerCase().includes(search.toLowerCase()) +
+      client.phone.toLowerCase().includes(search.toLowerCase()) +
+      client.email.toLowerCase().includes(search.toLowerCase()) +
+      client.isActive
+        .toString()
+        .includes(search.toLowerCase() === "ativo" ? "true" : "false")
+    );
   });
   const currentItems = filteredItems.slice(startIndex, endIndex);
 
