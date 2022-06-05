@@ -7,6 +7,15 @@ import { DeleteClient } from "../../endpoints/Delete";
 import { UpdateClient } from "../../endpoints/Update";
 import { CreateClient } from "../../endpoints/Create";
 import { Button, Input } from "@mui/material";
+import {
+  TypographyHeader,
+  style,
+  InputAdress,
+  InputNote,
+  InputsContainer,
+  InputsContent,
+  ButtonGroup
+} from "./ModalClient.styles";
 
 interface IClient {
   id?: number;
@@ -43,13 +52,13 @@ function ModalClient(props: any) {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <Typography id="modal-modal-title" variant="h5" component="h5">
+        <TypographyHeader id="modal-modal-title" variant="h5">
           Dados do Cliente
-        </Typography>
+        </TypographyHeader>
         <Typography id="modal-modal-description" component={"div"}>
           <form onSubmit={props.handleSubmit(onSubmit)}>
-            <div className="inputsContainers">
-              <div className="inputsContent">
+            <InputsContainer>
+              <InputsContent>
                 <div>
                   <Input
                     type="text"
@@ -91,25 +100,23 @@ function ModalClient(props: any) {
                     })}
                   />
                 </div>
-              </div>
-              <Input
-                className="inputAdress"
+              </InputsContent>
+              <InputAdress
                 type="text"
                 placeholder="Endereço"
                 {...props.register("address", {
                   required: false,
                 })}
               />
-              <Input
-                className="inputNotes"
+              <InputNote
                 type="text"
                 placeholder="Notas"
                 {...props.register("note", {
                   required: false,
                 })}
               />
-            </div>
-            <div className="buttonGroup">
+            </InputsContainer>
+            <ButtonGroup>
               <Button variant="contained" color="success" type="submit">
                 Salvar
               </Button>
@@ -125,7 +132,7 @@ function ModalClient(props: any) {
                   Deletar
                 </Button>
               ) : null}
-            </div>
+            </ButtonGroup>
           </form>
         </Typography>
       </Box>
@@ -134,15 +141,3 @@ function ModalClient(props: any) {
 }
 
 export default ModalClient;
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 500,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
