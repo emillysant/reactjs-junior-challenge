@@ -102,11 +102,18 @@ Deve haver um botão na tabela para excluir o cliente
 ![image](https://user-images.githubusercontent.com/70452464/172053210-1ccb31bd-267a-4a3a-a697-41bd1a296f1b.png)
 
 ### Features
-Gerador de dados mocados: https://www.mockaroo.com/
-Requisição com Axios: https://www.npmjs.com/package/axios    
-Estilização com Material UI: https://mui.com/pt/material-ui/react-button/
-Geração de ids com uuid: https://www.npmjs.com/package/uuid
-Custom Hook para renderizar os Clientes
+<ul>
+    <li>Gerador de dados mocados: https://www.mockaroo.com/</li>
+    <li>Requisição com Axios: https://www.npmjs.com/package/axios</li>
+    <li>Estilização com Material UI: https://mui.com/pt/material-ui/react-button/</li>
+    <li>Geração de ids com uuid: https://www.npmjs.com/package/uuid</li>
+    <li>Custom Hook para renderizar os Clientes</li>
+</ul>
+
+    
+
+
+
 
 
 
