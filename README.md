@@ -95,4 +95,19 @@ Deve haver um botão na tabela para excluir o cliente
     Fazer transição para o modal
     Paginação com filtros
     Adicionar foto ao cliente
-    
+
+## Solução
+### Imagens
+    ![image](https://user-images.githubusercontent.com/70452464/172052353-5e949063-908a-4527-8713-a29d88a16453.png)
+    ![image](https://user-images.githubusercontent.com/70452464/172052385-8694feb1-64ef-471a-ba42-365372632aa7.png)
+
+### Features
+    Gerador de dados mocados: https://www.mockaroo.com/
+    Requisição com Axios: https://www.npmjs.com/package/axios
+    Criei um Custom Hook para pegar Clientes chamado getClients
+    Estilização com Material UI: https://mui.com/pt/material-ui/react-button/
+    Geração de ids com uuid: https://www.npmjs.com/package/uuid
+
+
+
+
