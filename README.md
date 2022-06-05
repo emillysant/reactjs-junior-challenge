@@ -20,7 +20,7 @@ A equipe comercial está meio perdida, eles não tem uma base completa de client
     - JSON-Server https://www.npmjs.com/package/json-server
 4. Para rodar a aplicação, basta rodar no terminal/console: ```yarn start```
     - Frontend: http://localhost:3000  
-    - Backend: http://localhost:3001
+    - Backend: http://localhost:8000
 ## FrontEnd
 Abaixo temos um exemplo de como deveria ser o projeto e os elementos básicos. Lembrando que isso é um guia, não é necessário fazer by pixel, você tem a liberdade de alterar conforme seu gosto.
 https://www.figma.com/file/QYmsgMBObQBSA54sILKWEX/
