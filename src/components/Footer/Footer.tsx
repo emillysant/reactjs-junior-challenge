@@ -13,10 +13,10 @@ function Footer() {
       <div>
         <div>Redes Sociais</div>
         <div>
-          <a href="https://www.facebook.com/">
+          <a href="https://www.facebook.com/" target="_blank">
             <Imagem src={logoFacebook}  alt="Facebook"/>
           </a>
-          <a href="https://www.instagram.com/">
+          <a href="https://www.instagram.com/" target="_blank">
             <Imagem src={logoInstagem} alt="Instagram"/>
           </a>
         </div>

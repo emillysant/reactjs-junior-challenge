@@ -14,7 +14,7 @@ function Header(props: any) {
             type="text"
             value={props.search}
             onChange={(e) => props.setSearch(e.target.value)}
-            placeholder="Pesquisar por nome"
+            placeholder="Pesquisar por nome, empresa, email, telefone ou status"
           />
           <Button color="error" variant="contained" onClick={props.handleOpen}>Adicionar Cliente</Button>
     </Container>
