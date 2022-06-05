@@ -1,48 +1,14 @@
 {
   "clients": [
     {
-      "id": 2,
-      "guid": "b4762561-ee68-4ee7-b18f-fdaf2898ec31",
-      "name": "Elvyn Challice",
-      "company": "Voonyx",
-      "email": "echallice1@wix.com",
-      "phone": "604-590-6639",
-      "address": "20.189.248.155",
-      "note": "toolset",
-      "isActive": true
-    },
-    {
-      "id": 3,
-      "guid": "727eaddc-9455-457a-9474-94c775f52cc5",
-      "name": "Riki Ligertwood",
-      "company": "Midel",
-      "email": "rligertwood2@yale.edu",
-      "phone": "788-788-8834",
-      "address": "122.236.205.203",
-      "note": "Optional",
-      "isActive": false
-    },
-    {
-      "id": 4,
-      "guid": "7fa15bb9-3459-45d7-b83c-09c93a1c1993",
-      "name": "Cori Hugues",
+      "name": "Cori Huguesesss",
       "company": "Cogilith",
       "email": "chugues3@mapquest.com",
       "phone": "979-129-9193",
       "address": "100.80.174.163",
       "note": "core",
-      "isActive": false
-    },
-    {
-      "id": 5,
-      "guid": "aabd02b2-2c20-4c9f-86e4-4c558a18f34b",
-      "name": "Donal Beynkn",
-      "company": "Trupe",
-      "email": "dbeynkn4@prlog.org",
-      "phone": "306-686-7008",
-      "address": "148.140.12.197",
-      "note": "concept",
-      "isActive": false
+      "guid": "7fa15bb9-3459-45d7-b83c-09c93a1c1993",
+      "id": 4
     },
     {
       "id": 6,
@@ -252,6 +218,17 @@
       "address": "46.8.29.141",
       "note": "Exclusive",
       "isActive": true
+    },
+    {
+      "name": "Cachorro Caramelo",
+      "company": "naoTem",
+      "email": "conciergeadm1@leparcboaviagem.net.br",
+      "phone": "",
+      "address": "",
+      "note": "",
+      "guid": "b7eb5499-6a81-4a35-b858-6a20096bbc4c",
+      "isActive": true,
+      "id": 25
     }
   ]
 }

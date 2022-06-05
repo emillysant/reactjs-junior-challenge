@@ -1,17 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-const baseUrl = "http://localhost:8000";
+import {environment} from "../environment/environment"
+const baseUrl = environment.baseUrl;
 
 
-export const useGetClients = (): any[]  => {
+export const useGetClients = (openModal: any): any[]  => {
   const [clients, setClients] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     getClients();
-  }, [setClients]);
+  }, [setClients, openModal]);
 
   const getClients = async () => {
     await axios
@@ -21,7 +22,7 @@ export const useGetClients = (): any[]  => {
         setIsLoading(false);
       })
       .catch((error) => {
-        console.log(error.response);
+        //console.log(error.response);
         setError(error);
         setIsLoading(false);
       });

@@ -16,18 +16,8 @@ import {
   InputsContent,
   ButtonGroup
 } from "./ModalClient.styles";
+import { IClient } from "../../database/ClientInterface";
 
-interface IClient {
-  id?: number;
-  guid: string;
-  name: string;
-  company?: string;
-  email: string;
-  phone?: string;
-  address?: string;
-  note?: string;
-  isActive: boolean;
-}
 
 function ModalClient(props: any) {
   const deleteClient = async (id: any) => {
